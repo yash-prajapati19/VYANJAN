@@ -1,0 +1,51 @@
+.cartItemCard{
+    width:55vw;
+    height:25vh;
+    background-color: antiquewhite;
+    display: flex;
+}
+.cartItemCard > img{
+    height: 25vh;
+    width:30%;
+}
+
+.contentBox >h3{
+    margin:1vmax;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2vmax;
+}
+.contentBox > p{
+    font-family:cursive;
+    position: absolute;
+    margin-left: 34vmax;
+    margin-top: 3.5vmax ;
+}
+.quantity{
+    position: absolute;
+    margin-top: 2.5vmax;
+    margin-left: 1vmax;
+}
+.quantity > button{
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5vmax;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+    width:2vmax;
+}
+.quantity > button:hover {
+    background-color:rgba(0,0,0,0.8);
+}
+.quantity > input {
+    border: none;
+    padding: 0.4vmax;
+    width: 3vmax;
+    text-align: center;
+    outline: none;
+    font-size:1.2vmax;
+    color: rgba(0, 0, 0, 0.74);
+}
+.quantity > svg{
+    position: absolute;
+}

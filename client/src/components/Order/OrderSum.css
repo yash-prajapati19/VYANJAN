@@ -1,0 +1,43 @@
+.orderSum {
+    width: 30vmax;
+    background-color: blanchedalmond;
+    /* height: 20vmax; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vmax;
+    margin-right: 2vmax;
+}
+
+.orderTitle>h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 2vmax;
+    font-size: 2vmax;
+}
+
+.orderName {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    border-bottom: 1px solid black;
+    padding-bottom: 1vmax;
+}
+
+.orderName>p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.7vmax;
+    margin-right: 1vmax;
+    margin-top: 1vmax;
+}
+
+.totalPrice {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+}
+
+.totalPrice>p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.7vmax;
+    margin-right: 1vmax;
+    margin-top: 1vmax;
+}
