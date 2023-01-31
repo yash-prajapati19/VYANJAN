@@ -1,11 +1,12 @@
-import { Fragment } from "react";
-
+import { React } from "react";
+import { Route, Routes } from "react-router-dom";
+import Homepage from "../src/UserPage/Home/homepage";
 
 function App() {
   return (
-   <Fragment>
-    <h1>Welcome to Vyanjan</h1>
-   </Fragment>
+   <Routes>
+       <Route path="/home" element={<Homepage />} />
+   </Routes>
   );
 }
 
