@@ -9,6 +9,6 @@ const {
 const router = express.Router()
 
 router.route('/adminlogin').post(passwordVerification)
-router.route('/otp').post(otpVerification)
+router.route('/otp/:email').post(otpVerification)
 
 module.exports=router
