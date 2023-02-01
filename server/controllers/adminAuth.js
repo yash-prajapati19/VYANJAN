@@ -1,7 +1,10 @@
 const otpData = require('../models/otpSchema')
 const AdminData = require('../models/adminSchema')
+const jwt = require('jsonwebtoken')
+const resturantData = require('../models/resturant')
 const bcrypt = require('bcryptjs')
 const nodemailer = require('nodemailer')
+const user = require('../models/user')
 
 const passwordVerification = async (req, res) => {
   try {
@@ -52,21 +55,104 @@ const passwordVerification = async (req, res) => {
 }
 
 const otpVerification = async (req, res) => {
-  const {email} = req.params;
-  const {otp} = req.body;
-  const foundOtp = await otpData.find({ email })
-  if (foundOtp === null) {
-    return res.status(500).send('Unauthorized Access')
+  try {
+    const {email} = req.params;
+    const {otp} = req.body;
+    const foundOtp = await otpData.find({ email })
+    const foundAdmin = await AdminData.findOne({ email })
+    const foundResturant =await resturantData.findOne({ admin_id: foundAdmin._id })
+    if (foundAdmin === null) {
+      return res.status(500).send('Unauthorized Access')
+    }
+    if (foundOtp === null) {
+      return res.status(500).send('Unauthorized Access')
+    }
+    const verify = await bcrypt.compare(otp, foundOtp[foundOtp.length - 1].otp)
+    if (!verify) {
+      return res.status(500).send('Wrong Credentials')
+    }
+    await otpData.deleteMany({ email })
+  
+    // jwt code here ----------------------------------------------- YASH HERE
+   
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: 86400 // expires in 24 hours
+    });
+  
+    res.cookie('token', token, {
+      httpOnly: true
+    });
+  
+    return res.status(200).send( {auth: true, token, foundAdmin, foundResturant})
   }
-  const verify = await bcrypt.compare(otp, foundOtp[foundOtp.length - 1].otp)
-  if (!verify) {
-    return res.status(500).send('Wrong Credentials')
+  catch (error) {
+    return res.status(404).json({ error: error })
   }
-  await otpData.deleteMany({ email })
-  return res.status(200).send('Otp verification successful')
 }
+
+
+// register admin with resturant
+
+// -----------------------------jwt token is remaining---------------------------
+
+const registerAdmin_Resturant = async (req, res) => {
+  try {
+    const {
+      resturantName,
+      resturantTags,
+      resturantAddress: {
+        street,
+        aptName,
+        locality,
+        zip,
+        lat,
+        lng,
+        phoneNo
+      },
+      resturantItems,
+      email,
+      password,
+    } = req.body;
+
+    const formattedAdd = `${street}, ${aptName}, ${locality}, ${zip}, ${lat}, ${lng}, ${phoneNo}`;
+
+    const resturant = new resturantData({
+      name: resturantName,
+      tags: resturantTags,
+      address: {
+        street,
+        aptName,
+        locality,
+        zip,
+        lat,
+        lng,
+        phoneNo
+      },
+      formattedAddress: formattedAdd,
+      items: resturantItems,
+      email,
+    });
+
+    const newAdmin = new AdminData({
+      email,
+      password,
+      resturantId: resturant._id
+    })
+
+    const savedResturant = await resturant.save();
+    const savedAdmin = await newAdmin.save();
+
+    return res.status(200).json({
+      resturant: savedResturant,
+      admin: savedAdmin
+    });
+  } catch (error) {
+    return res.status(404).json({ error: error });
+  }
+};
 
 module.exports = {
   passwordVerification,
   otpVerification,
+  registerAdmin_Resturant
 }
