@@ -28,15 +28,6 @@ const resturantSchema = new Schema(
       },
     ],
     address: addressInfo,
-    minOrderAmount: Number,
-    costForOne: Number,
-    payment: [
-      {
-        type: String,
-        // enum: ["CASH", "ONLINE_PAYMENT", "UPI"],
-        required: true,
-      },
-    ],
     admin_id: { type: Schema.Types.ObjectId, required: true, ref: "AdminData" },
     items: [{ type: Schema.Types.ObjectId, ref: "Item" }],
   },
