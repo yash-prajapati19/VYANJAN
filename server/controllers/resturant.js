@@ -24,14 +24,13 @@ const getOneResturant = (req, res) => {
 
 // create resturantData
 
-const createResturant = (req, res) => {
+const createResturant = async (req, res) => {
     try {
         const {
             name,
             tags,
-            formattedAddress,
             imageUrl,
-            address : {
+            address: {
                 street,
                 aptName,
                 locality,
@@ -40,19 +39,19 @@ const createResturant = (req, res) => {
                 lng,
                 phoneNo
             },
-            minOrderAmount,
-            costForOne,
-            payment,
-            account,
-            items
+            items,
+            admin_id
         } = req.body;
+
+        console.log(req.body);
+
+        const formattedAdd = `${street}, ${aptName}, ${locality}, ${zip}, ${lat}, ${lng}, ${phoneNo}`;
 
         const resturant = new resturantData({
             name,
             tags,
-            formattedAddress,
             imageUrl,
-            address : {
+            address: {
                 street,
                 aptName,
                 locality,
@@ -61,16 +60,21 @@ const createResturant = (req, res) => {
                 lng,
                 phoneNo
             },
-            minOrderAmount,
-            costForOne,
-            payment,
-            account,
-            items
+            formattedAddress: formattedAdd,
+            items,
+            admin_id
         });
 
         const newResturant = resturant.save();
-        res.status(201).json(newResturant);
+        res.status(201).json(resturant);
     } catch(err) {
         res.status(500).json({ message : err.message })
     }
+}
+
+
+module.exports = {
+    getAllResturant,
+    getOneResturant,
+    createResturant
 }

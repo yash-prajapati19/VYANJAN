@@ -16,17 +16,21 @@ app.use('/', routing)
 
 const port = 5000
 
-const start = async() => {
-  await connectDB(process.env.MONGO_URI)
-    .then(()=>{
-      console.log('Database Connected')
-      app.listen(port, ()=>{
-        console.log(`Server is listening on port ${port}...`)
-      })
-    })
-    .catch((err)=>{
-      console.log(err);
-    })
-}
+// const start = async() => {
+//   await connectDB(process.env.MONGO_URI)
+//     .then(()=>{
+//       console.log('Database Connected')
+//       app.listen(port, ()=>{
+//         console.log(`Server is listening on port ${port}...`)
+//       })
+//     })
+//     .catch((err)=>{
+//       console.log(err);
+//     })
+// }
 
-start()
+app.listen(port, ()=>{
+  console.log(`Server is listening on port ${port}...`)
+})
+
+// start()

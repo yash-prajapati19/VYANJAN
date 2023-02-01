@@ -28,6 +28,10 @@ const resturantSchema = new Schema(
       },
     ],
     address: addressInfo,
+    formattedAddress: {
+      type: String,
+      required: true,
+    },
     admin_id: { type: Schema.Types.ObjectId, required: true, ref: "AdminData" },
     items: [{ type: Schema.Types.ObjectId, ref: "Item" }],
   },
