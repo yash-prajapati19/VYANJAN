@@ -10,7 +10,7 @@ import Order from './components/Order/Order'
 
 function App() {
   return (
-   <Fragment>
+  <Fragment>
     <Header />
       <Routes>
         <Route exact path='/' element={<Home />} />
@@ -19,7 +19,7 @@ function App() {
         <Route exact path='/order' element={<Order />} />
       </Routes>
     <Footer />
-   </Fragment>
+  </Fragment>
   );
 }
 
