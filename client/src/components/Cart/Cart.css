@@ -1,0 +1,8 @@
+.cart{
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+}
+.cartItemCard{
+    /* flex-direction: column; */
+    margin-top:1vmax;
+}

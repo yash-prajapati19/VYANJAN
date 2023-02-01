@@ -1,0 +1,32 @@
+.footer{
+    background-color: black;
+    color:white;
+    display: flex;
+    margin-top: 10vmax;
+    padding: 2vmax;
+    height:20vmax;
+}
+.leftFooter{
+    width:25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.middleFooter-1{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.middleFooter-2{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rightFooter{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
