@@ -21,9 +21,6 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    formattedAddress: {
-      type: String,
-    },
     address: deliveryInfo,
     account: { type: Schema.Types.ObjectId, required: true, ref: "AdminData" },
     cart: {

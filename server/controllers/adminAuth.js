@@ -21,36 +21,50 @@ const passwordVerification = async (req, res) => {
       otp: gotp,
       email: foundAdmin.email
     })
-    await otpGenerate.save()
     let transporter = await nodemailer.createTransport({
-      service: "hotmail",
+      service: "gmail",
+      host: "smtp.gmail.com",
+      port:465,
+      secure: true,
       auth: {
-        user: 'user_vyanjan@outlook.com',
-        pass: 'demo_account@mail-services',
+        user: 'vyanjan.demo.mailer@gmail.com',
+        pass: 'geqbxfgsevsuollg',
       }
     })
     const mailMessage = {
-      from: 'user_vyanjan@outlook.com',
+      from: 'vyanjan.demo.mailer@gmail.com',
       to: foundAdmin.email,
       subject: 'Vyanjan Admin OTP Verification',
       html: `Your OTP for Admin verification is <strong>${gotp}</strong>.`
     }
-    transporter.sendMail(mailMessage, function(err, info){
-      if(err){
+    await transporter.sendMail(mailMessage)
+      .then(async ()=>{
+        await otpGenerate.save()
+        return res.status(200).send("Main sent")
+      })
+      .catch((err)=>{
         console.log(err);
-        return res.status(404).send(err)
-      }
-      return res.status(200).send('Mail Sent')
-    })
+        return res.status(500).send("Mail not sent")
+      })
   } catch (error) {
     return res.status(404).json({ error: error })
   }
 }
 
 const otpVerification = async (req, res) => {
-
+  const {email} = req.params;
+  const {otp} = req.body;
+  const foundOtp = await otpData.find({ email })
+  if (foundOtp === null) {
+    return res.status(500).send('Unauthorized Access')
+  }
+  const verify = await bcrypt.compare(otp, foundOtp[foundOtp.length - 1].otp)
+  if (!verify) {
+    return res.status(500).send('Wrong Credentials')
+  }
+  await otpData.deleteMany({ email })
+  return res.status(200).send('Otp verification successful')
 }
-
 
 module.exports = {
   passwordVerification,
