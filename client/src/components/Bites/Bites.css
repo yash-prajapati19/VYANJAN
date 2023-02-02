@@ -1,0 +1,26 @@
+html{
+    scroll-snap-type: y mandatory;
+}
+.bites{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: black;
+    color:white;
+}
+
+
+.video-container{
+    position:relative;
+    height: 80vh;
+    width: 70vw;
+    max-width:270px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+.video-container::-webkit-scrollbar{
+    display: none;
+}
