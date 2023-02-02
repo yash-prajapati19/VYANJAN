@@ -7,11 +7,11 @@ import viewer from '../../images/view.png'
 const Register = () => {
   //<a href="https://www.freepik.com/free-vector/hand-drawn-food-elements_1159027.htm#query=food&position=10&from_view=search&track=sph">Image by bimbimkha</a> on Freepik      
 
-  
+
   // <a href="https://www.flaticon.com/free-icons/eye" title="eye icons">Eye icons created by exomoon design studio - Flaticon</a>
-  
+
   // <a href="https://www.flaticon.com/free-icons/eyes" title="eyes icons">Eyes icons created by Tanah Basah - Flaticon</a>
-  
+
   // footer link to be mentioned
 
 
@@ -20,7 +20,7 @@ const Register = () => {
   const [show, setShow] = useState('password')
   const [showIcon, setShowIcon] = useState(hider)
 
-  const [registerData, setRegisterData] = useState({name:'', email:'', tags:[], address:{floorApartment:'', locality:'', street:'', zipcode:0}, number:0, password:'', confirmPassword:'', tnc:false})
+  const [registerData, setRegisterData] = useState({ name: '', email: '', tags: [], imageUrl: [], address: { floorApartment: '', locality: '', street: '', zipcode: 0 }, number: 0, password: '', confirmPassword: '', tnc: false })
 
   const unhide = () => {
     if (show === 'password') {
@@ -43,25 +43,25 @@ const Register = () => {
 
   const sendData = async (e) => {
     e.preventDefault()
-    if(registerData.name === '' || registerData.email === '' || registerData.address === {} || registerData.password === ''){
+    if (registerData.name === '' || registerData.email === '' || registerData.address === {} || registerData.password === '') {
       return alert('Fields empty')
-    } else if(registerData.address.zipcode.toString().length !== 6){
+    } else if (registerData.address.zipcode.toString().length !== 6) {
       clearAllInputs()
       return alert('Wrong Zip Code!!!')
-    } else if(registerData.number.toString().length !== 10){
+    } else if (registerData.number.toString().length !== 10) {
       clearAllInputs()
       return alert('Invalid phone number!!!')
-    } else if(registerData.password !== registerData.confirmPassword){
+    } else if (registerData.password !== registerData.confirmPassword) {
       clearAllInputs()
       return alert('Passwords don\'t match, try again!!!')
-    } else if(!registerData.tnc){
+    } else if (!registerData.tnc) {
       clearAllInputs()
       return alert('Please Accept the terms and conditions!!!')
     }
 
     const res = await fetch('http://localhost:5000/registerRestaurant', {
       method: 'POST',
-      headers:{
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -70,9 +70,9 @@ const Register = () => {
     })
 
     const data = await res.json()
-    if (data === 'success'){
+    if (data === 'success') {
       navigate('/adminlogin')
-    } else{
+    } else {
       alert('An error occurred while logging you in, please try again')
       clearAllInputs()
     }
@@ -112,40 +112,44 @@ const Register = () => {
             </p>
             <form method='post'>
               <div>
-                <input onChange={(e)=>setRegisterData({name:e.target.value})} required type="text" name="restaurantName" id="restaurantName" placeholder='Name your Restaurant' className='border border-gray-400 py-1 w-full px-2' />
+                <input onChange={(e) => setRegisterData({ name: e.target.value })} required type="text" name="restaurantName" id="restaurantName" placeholder='Name your Restaurant' className='border border-gray-400 py-1 w-full px-2' />
               </div>
               <div
                 className='mt-5'>
-                <input onChange={(e)=>setRegisterData(prevState => ({...prevState, email:e.target.value}))} required type="email" name="email" id="email" placeholder='Provide an email' className='border border-gray-400 py-1 w-full px-2' />
+                <input onChange={(e) => setRegisterData(prevState => ({ ...prevState, email: e.target.value }))} required type="email" name="email" id="email" placeholder='Provide an email' className='border border-gray-400 py-1 w-full px-2' />
               </div>
               <div
                 className='mt-5'>
-                <textarea onChange={(e)=>{setRegisterData(prevState => ({...prevState, tags:[e.target.value].toString().split(',')}))}} name="tags" id="tags" placeholder="Tags(separate with a ',')" className='border border-gray-400 resize-none py-1 w-full px-2' />
+                <textarea onChange={(e) => { setRegisterData(prevState => ({ ...prevState, tags: [e.target.value].toString().split(',') })) }} name="tags" id="tags" placeholder="Tags(separate with a ',' if multiple)" className='border border-gray-400 resize-none py-1 w-full px-2' />
+              </div>
+              <div
+                className=''>
+                <textarea onChange={(e) => { setRegisterData(prevState => ({ ...prevState, imageUrl: [e.target.value].toString().split(' ') })) }} name="tags" id="tags" placeholder="Imag urls(separate with a blank space if multiple)" className='border border-gray-400 resize-none py-1 w-full px-2' />
               </div>
               <div
                 className='mt-5 grid grid-cols-2 gap-5'>
-                <input onChange={(e)=>{setRegisterData(prevState => ({...prevState, address:{floorApartment: e.target.value}}))}} required type="text" name="floor/apartment" id="floor/apartment" placeholder='Floor/Apartment' className='border border-gray-400 py-1 w-full px-2' />
-                <input onChange={(e)=>{setRegisterData(prevState => ({...prevState, address:{...prevState.address, locality: e.target.value}}))}} required type="text" name="locality" id="locality" placeholder='Locality' className='border border-gray-400 py-1 w-full px-2' />
-                <input onChange={(e)=>{setRegisterData(prevState => ({...prevState, address:{...prevState.address, street: e.target.value}}))}} required type="text" name="street" id="street" placeholder='Street' className='border border-gray-400 py-1 w-full px-2' />
-                <input onChange={(e)=>{setRegisterData(prevState => ({...prevState, address:{...prevState.address, zipcode: Number(e.target.value)}}))}} required type="number" name="zipcode" id="zipcode" placeholder='Zipcode' className='border border-gray-400 py-1 w-full px-2' />
+                <input onChange={(e) => { setRegisterData(prevState => ({ ...prevState, address: { floorApartment: e.target.value } })) }} required type="text" name="floor/apartment" id="floor/apartment" placeholder='Floor/Apartment' className='border border-gray-400 py-1 w-full px-2' />
+                <input onChange={(e) => { setRegisterData(prevState => ({ ...prevState, address: { ...prevState.address, locality: e.target.value } })) }} required type="text" name="locality" id="locality" placeholder='Locality' className='border border-gray-400 py-1 w-full px-2' />
+                <input onChange={(e) => { setRegisterData(prevState => ({ ...prevState, address: { ...prevState.address, street: e.target.value } })) }} required type="text" name="street" id="street" placeholder='Street' className='border border-gray-400 py-1 w-full px-2' />
+                <input onChange={(e) => { setRegisterData(prevState => ({ ...prevState, address: { ...prevState.address, zipcode: Number(e.target.value) } })) }} required type="number" name="zipcode" id="zipcode" placeholder='Zipcode' className='border border-gray-400 py-1 w-full px-2' />
               </div>
               <div
                 className='mt-5'>
-                <input onChange={(e)=>setRegisterData(prevState => ({...prevState, number: Number(e.target.value)}))} required type="number" name="contact" id="contact" placeholder='Enter your number' className='border border-gray-400 py-1 w-full px-2' />
+                <input onChange={(e) => setRegisterData(prevState => ({ ...prevState, number: Number(e.target.value) }))} required type="number" name="contact" id="contact" placeholder='Enter your number' className='border border-gray-400 py-1 w-full px-2' />
               </div>
               <div
                 className='mt-5 relative'>
                 <img src={showIcon} onClick={unhide} alt="" className='w-12 absolute right-0 px-2 mb-1 hover:cursor-pointer' />
-                <input onChange={(e)=>setRegisterData(prevState => ({...prevState, password: e.target.value}))} required type={`${show}`} name="password" id="password" placeholder='Password' className='border border-gray-400 py-1 w-full px-2' />
+                <input onChange={(e) => setRegisterData(prevState => ({ ...prevState, password: e.target.value }))} required type={`${show}`} name="password" id="password" placeholder='Password' className='border border-gray-400 py-1 w-full px-2' />
               </div>
               <div
                 className='mt-5 relative'>
-                <img src={showIcon} onClick={unhide} alt="" className='w-12 absolute px-2 mb-1 hover:cursor-pointer right-0'/>
-                <input  onChange={(e)=>setRegisterData(prevState => ({...prevState, confirmPassword: e.target.value}))} required type={`${show}`} name="confirmpassword" id="confirmpassword" placeholder='Confirm Password' className='border border-gray-400 py-1 w-full px-2' />
+                <img src={showIcon} onClick={unhide} alt="" className='w-12 absolute px-2 mb-1 hover:cursor-pointer right-0' />
+                <input onChange={(e) => setRegisterData(prevState => ({ ...prevState, confirmPassword: e.target.value }))} required type={`${show}`} name="confirmpassword" id="confirmpassword" placeholder='Confirm Password' className='border border-gray-400 py-1 w-full px-2' />
               </div>
               <div
                 className='mt-5'>
-                <input onChange={(e)=>setRegisterData(prevState => ({...prevState, tnc:e.target.value}))} required type="checkbox" name="terms" id="terms" className='border border-gray-400' />
+                <input onChange={(e) => setRegisterData(prevState => ({ ...prevState, tnc: e.target.value }))} required type="checkbox" name="terms" id="terms" className='border border-gray-400' />
                 <label htmlFor="terms">
                   <span
                     className='ml-1'>
@@ -155,7 +159,7 @@ const Register = () => {
               </div>
               <div
                 className='mt-5'>
-                <button onClick={(e)=>sendData(e)}
+                <button onClick={(e) => sendData(e)}
                   className='w-full cursor-pointer bg-indigo-700/80 font-semibold py-3 text-center text-white'>
                   Register Now
                 </button>

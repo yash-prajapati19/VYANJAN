@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router'
 
-const OTP = ({ urlMail, tempLogin }) => {
+const OTP = ({ urlMail, tempLogin, setTempLogin }) => {
 
   const navigate = useNavigate()
 
@@ -53,6 +53,7 @@ const OTP = ({ urlMail, tempLogin }) => {
     const data = await res.json()
 
     if (data === 'Otp verification successfull') {
+      setTempLogin('')
       return navigate('/adminHome')
     } else {
       return alert('Otp verification unsuccessfull. Try again or request another otp')

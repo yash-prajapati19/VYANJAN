@@ -36,7 +36,6 @@ const Login = ( { setUrlMail, setTempLogin }) => {
       return alert('All fields not filled')
     }
     
-    setTempLogin({email:email, password:password})
     const res = await fetch(`http://localhost:5000/adminlogin`, {
       method: 'POST',
       headers: {
@@ -46,10 +45,11 @@ const Login = ( { setUrlMail, setTempLogin }) => {
         email, password
       })
     })
-
+    
     const data = await res.json()
     if(data === 'Mail sent'){
       setUrlMail(email)
+      setTempLogin({email:email, password:password})
       return navigate(`/otp/${email}`)
     } else {
       alert('Authorization Unsuccessful, please check your details properly')

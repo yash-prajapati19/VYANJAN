@@ -15,8 +15,8 @@ function App() {
   <Fragment>
     <Routes>
       <Route exact path='/registerRestaurant' element={<Register />} />
-      <Route exact path='/adminlogin' element={<Login setUrlMail={setOtpVerificationMail} setTempLogin={setTempLogin} tempLogin={tempLogin} />} />
-      <Route exact path='/otp/*' element={<OTP urlMail={otpVerificationMail} tempLogin={tempLogin} />} />
+      <Route exact path='/adminlogin' element={<Login setUrlMail={setOtpVerificationMail} setTempLogin={setTempLogin} />} />
+      <Route exact path='/otp/*' element={<OTP urlMail={otpVerificationMail} tempLogin={tempLogin} setTempLogin={setTempLogin} />} />
     </Routes>
   </Fragment>
   );
