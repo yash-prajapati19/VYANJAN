@@ -30,6 +30,7 @@ const orderPlaced = async (req, res) => {
     });
 
     const savedOrder = await order.save();
+    res.status(200).json(savedOrder);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -60,12 +61,12 @@ const getOneOrder = async (req, res) => {
 
 const updateOrder = async (req, res) => {
   try {
-    const order = await orderData.findById(req.params.id);
-    if (order) {
-      order.status = req.body.status;
-      const updatedOrder = await order.save();
-      res.status(200).json(updatedOrder);
-    }
+    const updatedOrder = await orderData.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    res.status(200).json(updatedOrder);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -75,12 +76,12 @@ const updateOrder = async (req, res) => {
 
 const cancelOrder = async (req, res) => {
   try {
-    const order = await orderData.findById(req.params.id);
-    if (order) {
-      order.status = "cancelled";
-      const updatedOrder = await order.save();
-      res.status(200).json(updatedOrder);
-    }
+    const updatedOrder = await orderData.findByIdAndUpdate(
+      req.params.id,
+      { status: "cancelled" },
+      { new: true }
+    );
+    res.status(200).json(updatedOrder);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

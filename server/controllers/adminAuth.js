@@ -100,6 +100,7 @@ const registerAdmin_Resturant = async (req, res) => {
     const {
       resturantName,
       resturantTags,
+      imageUrl,
       resturantAddress: {
         street,
         aptName,
@@ -109,7 +110,7 @@ const registerAdmin_Resturant = async (req, res) => {
         lng,
         phoneNo
       },
-      resturantItems,
+      // resturantItems,
       email,
       password,
     } = req.body;
@@ -119,6 +120,7 @@ const registerAdmin_Resturant = async (req, res) => {
     const resturant = new resturantData({
       name: resturantName,
       tags: resturantTags,
+      imageUrl,
       address: {
         street,
         aptName,
@@ -129,7 +131,7 @@ const registerAdmin_Resturant = async (req, res) => {
         phoneNo
       },
       formattedAddress: formattedAdd,
-      items: resturantItems,
+      // items: resturantItems,
       email,
     });
 

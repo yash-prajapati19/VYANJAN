@@ -1,11 +1,13 @@
 const itemData = require("../models/item");
+const { findByIdAndUpdate } = require("../models/resturant");
+const resturantData = require("../models/resturant");
 
 // create item by resturant
 
 const createItem = async (req, res) => {
   try {
     const { title, description, tags, imageUrl, price, creator } = req.body;
-
+    
     const item = new itemData({
       title,
       description,
@@ -14,9 +16,18 @@ const createItem = async (req, res) => {
       price,
       creator,
     });
-
+    
     const savedItem = await item.save();
-    res.status(200).json(savedItem);
+
+    const updateResturantItem = await resturantData.findByIdAndUpdate(
+      req.params.id,
+      {
+        $push: { items: savedItem._id },
+      },
+      { new: true }
+    );
+
+    res.status(200).json({ savedItem, updateResturantItem});
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
