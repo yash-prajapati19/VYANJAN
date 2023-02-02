@@ -1,0 +1,85 @@
+body{
+    background-color: black;
+}
+.orderTitle {
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 1.8vmax;
+    border-bottom: 1px solid white;
+    width: 25%;
+    margin: 0vmax auto;
+    color: white;
+
+}
+.orderBoxDiv{
+    display: flex;
+    flex-wrap: wrap;
+}
+.orderBox {
+    background-color: rgba(115, 115, 115, 0.26);
+    margin-left: 5vmax;
+    margin-top: 5vmax;
+    width: 25vmax;
+}
+.orderBox>.orderId {
+    display: flex;
+    margin-left: 0.5vmax;
+    /* margin-top: 0.5vmax; */
+}
+.orderBox>.orderId>p {
+    font-size: 1.5vmax;
+    font-family: cursive;
+    color:white;
+}
+.orderBox>.orderFrom {
+    display: flex;
+    margin-left: 0.5vmax;
+}
+.orderBox>.orderFrom>p {
+    font-size: 1.5vmax;
+    font-family: cursive;
+    color:white;
+}
+.orderBox>.orderAddress {
+    display: flex;
+    margin-left: 0.5vmax;
+white-space: initial;
+}
+.orderBox>.orderAddress>p {
+    font-size: 1.5vmax;
+    font-family: cursive;
+    color:white;
+}
+.orderBox>.orderCall {
+    display: flex;
+    margin-left: 0.5vmax;
+}
+
+.orderBox>.orderCall>p {
+    font-size: 1.5vmax;
+    font-family: cursive;
+    color:white;
+}
+
+.orderBox>.cancel {
+    margin: 0.5vmax;
+}
+
+.orderBox>.cancel>p {
+    font-family: cursive;
+    font-size: 1.5vmax;
+    color:white;
+}
+
+.cancel>.btn>button {
+    margin-top: 1vmax;
+    margin-left: 3vmax;
+    border: none;
+    background-color: rgba(115, 115, 115, 0.26);
+    color: white;
+    padding: 1vmax;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+    width: 18vmax; 
+}

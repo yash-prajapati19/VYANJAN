@@ -1,0 +1,52 @@
+.orderSum {
+    width: 25vmax;
+    background-color: rgba(25, 25, 25, 0.26);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0vmax;
+    margin-right: 1vmax;
+    color:white;
+    cursor: pointer;
+}
+.orderSumTitle{
+    display: flex;
+    justify-content: center;
+}
+.orderSumTitle>h3 {
+    font-family: monospace;
+    margin-top: 2vmax;
+    margin-right: 2vmax;
+    font-size: 2vmax;
+}
+.orderSumTitle>p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2vmax;
+  margin-left: 4vmax;
+}
+.orderName {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    border-bottom: 1px solid white;
+    padding-bottom: 1vmax;
+}
+
+.orderName>p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.7vmax;
+    margin-right: 1vmax;
+    margin-top: 1vmax;
+}
+
+.totalPrice {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+}
+
+.totalPrice>p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.7vmax;
+    margin-right: 1vmax;
+    margin-top: 1vmax;
+}

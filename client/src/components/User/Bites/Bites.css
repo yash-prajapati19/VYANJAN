@@ -1,0 +1,38 @@
+html{
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+}
+.bites{
+    /* display: grid;
+    place-items: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(162, 162, 162);
+    color:black;
+}
+
+.status{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.video-container{
+    /* position:relative; */
+    height: 80vh;
+    width: 70vw;
+    max-width:270px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+.video-container::-webkit-scrollbar{
+    display: none;
+}
