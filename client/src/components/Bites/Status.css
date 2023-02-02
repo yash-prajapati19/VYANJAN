@@ -1,8 +1,0 @@
-.status{
-    display: flex;
-    position: relative;
-    left:100%;
-}
-.status > p{
-    font-size: 1.2rem;
-}
