@@ -21,12 +21,12 @@ const resturantSchema = new Schema(
       type: String,
       required: true,
     },
-    imageUrl: [
+    imageUrl:
       {
         type: String,
         required: true,
       },
-    ],
+    
     address: addressInfo,
     formattedAddress: {
       type: String,
