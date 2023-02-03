@@ -5,7 +5,6 @@ const {
   otpVerification,
 } = require('../controllers/adminAuth');
 
-
 const router = express.Router()
 
 router.route('/adminlogin').post(passwordVerification)

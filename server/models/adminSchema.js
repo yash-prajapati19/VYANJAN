@@ -12,16 +12,6 @@ const AdminSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
-  accountVerifyToken: String,
-
-  accountVerifyTokenExpiration: Date,
-
-  isVerified: {
-    type: Boolean,
-    default: false,
-  },
-
 },
   { timestamps: true }
 )
