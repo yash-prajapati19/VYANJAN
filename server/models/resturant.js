@@ -21,18 +21,18 @@ const resturantSchema = new Schema(
       type: String,
       required: true,
     },
-    imageUrl: [
+    imageUrl:
       {
         type: String,
         required: true,
       },
-    ],
+    
     address: addressInfo,
     formattedAddress: {
       type: String,
       required: true,
     },
-    admin_id: { type: Schema.Types.ObjectId, required: true, ref: "AdminData" },
+    admin_id: { type: Schema.Types.ObjectId, required: true, default:"", ref: "AdminData" },
     items: [{ type: Schema.Types.ObjectId, ref: "Item" }],
   },
   { timestamps: true }

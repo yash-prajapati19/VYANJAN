@@ -25,6 +25,7 @@ const itemSchema = new Schema(
     creator: {
       type: Schema.Types.ObjectId,
       ref: "Resturant",
+      default:"",
       required: true,
     },
   },

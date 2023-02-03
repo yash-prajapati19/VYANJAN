@@ -114,6 +114,8 @@ const registerAdmin_Resturant = async (req, res) => {
         phoneNo
       },
       // resturantItems,
+      admin_id,
+      items,
       email,
       password,
     } = req.body;
@@ -121,8 +123,8 @@ const registerAdmin_Resturant = async (req, res) => {
     const formattedAdd = `${street}, ${aptName}, ${locality}, ${zip}, ${lat}, ${lng}, ${phoneNo}`;
 
     const resturant = new resturantData({
-      name: resturantName,
-      tags: resturantTags,
+      name:resturantName,
+      tags:resturantTags,
       imageUrl,
       address: {
         street,
@@ -133,8 +135,10 @@ const registerAdmin_Resturant = async (req, res) => {
         lng,
         phoneNo
       },
-      formattedAddress: formattedAdd,
-      // items: resturantItems,
+      formattedAddress:formattedAdd,
+      //items: resturantItems,
+      admin_id,
+      items,
       email,
     });
 
@@ -152,7 +156,7 @@ const registerAdmin_Resturant = async (req, res) => {
       admin: savedAdmin
     });
   } catch (error) {
-    return res.status(404).json({ error: error });
+    return res.status(404).json(error);
   }
 };
 
