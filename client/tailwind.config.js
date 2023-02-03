@@ -9,7 +9,9 @@ module.exports = {
         transparent: 'transparent',
         current: 'currentColor',
         kindaTransparent: 'rgba(255, 255, 255, 0.3)',
-        kindaSimilarToTransparent: 'rgba(255, 255, 255, 0.6)'
+        kindaSimilarToTransparent: 'rgba(255, 255, 255, 0.6)',
+        tintedGreen: '#7CFC00',
+        superBlack: 'rgb(15, 15, 15)'
       }
     },
   },

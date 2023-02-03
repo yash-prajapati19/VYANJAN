@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Donut from '../../images/undraw_donut_love_kau1.svg'
 import hider from '../../images/hide.png'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import viewer from '../../images/view.png'
+import './AdminFont.css'
 
 const Register = () => {
-  //<a href="https://www.freepik.com/free-vector/hand-drawn-food-elements_1159027.htm#query=food&position=10&from_view=search&track=sph">Image by bimbimkha</a> on Freepik      
+  //<a href="https://www.freepik.com/free-vector/hand-drawn-food-elements_1159027.htm#query=food&position=10&from_view=search&track=sph">Image by bimbimkha</a>    
 
 
   // <a href="https://www.flaticon.com/free-icons/eye" title="eye icons">Eye icons created by exomoon design studio - Flaticon</a>

@@ -3,6 +3,7 @@ import LoginImage from '../../images/access-control-system-abstract-concept/2094
 import hider from '../../images/hide.png'
 import viewer from '../../images/view.png'
 import { useNavigate } from 'react-router'
+import './AdminFont.css'
 
 
 const Login = ( { setUrlMail, setTempLogin }) => {
