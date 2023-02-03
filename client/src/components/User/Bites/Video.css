@@ -4,10 +4,12 @@
 }
 .video-cards{
 position: relative;
+margin: 0;
 }
 
 video{
     width: 100%;
     height: 100%;
     scroll-snap-align: start;
+    margin: 0;
 }

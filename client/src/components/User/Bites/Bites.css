@@ -3,6 +3,7 @@ html{
     overflow-x: hidden;
 }
 .bites{
+    background-image: url(../../../images/foodSvg.jpg);
     /* display: grid;
     place-items: center; */
     display: flex;
@@ -11,7 +12,7 @@ html{
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: rgb(162, 162, 162);
+    background-color: rgb(0, 0, 0);
     color:black;
 }
 
@@ -19,7 +20,7 @@ html{
     width: 100%;
     display: flex;
     flex-direction: row;
-    
+    color:white;
 }
 
 .video-container{
@@ -32,6 +33,7 @@ html{
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
+    margin-top:0;
 }
 .video-container::-webkit-scrollbar{
     display: none;

@@ -23,10 +23,8 @@ const AdminOrderBox = () => {
       <AdminOrderSum />
       <div className="cancel">
         <p>Order Placed</p>
-        <div className="btn">
           <button>Accept Order</button>
           <button>Cancel Order</button>
-        </div>
       </div>
     </div>
   );
