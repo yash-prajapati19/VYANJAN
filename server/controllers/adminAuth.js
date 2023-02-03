@@ -5,6 +5,7 @@ const resturantData = require('../models/resturant')
 const bcrypt = require('bcryptjs')
 const nodemailer = require('nodemailer')
 const user = require('../models/user')
+const itemsData = require('../models/item')
 
 const passwordVerification = async (req, res) => {
   try {
@@ -60,7 +61,9 @@ const otpVerification = async (req, res) => {
     const {otp} = req.body;
     const foundOtp = await otpData.find({ email })
     const foundAdmin = await AdminData.findOne({ email })
-    const foundResturant =await resturantData.findOne({ admin_id: foundAdmin._id })
+    const foundResturant = await resturantData.findOne({ admin_id: foundAdmin._id })
+    const resturantItems = await itemsData.find({ creator : foundResturant._id })
+
     if (foundAdmin === null) {
       return res.status(500).send('Unauthorized Access')
     }
@@ -83,7 +86,7 @@ const otpVerification = async (req, res) => {
       httpOnly: true
     });
   
-    return res.status(200).send( {auth: true, token, foundAdmin, foundResturant})
+    return res.status(200).send( {auth: true, resturantItems, foundAdmin, foundResturant})
   }
   catch (error) {
     return res.status(404).json({ error: error })

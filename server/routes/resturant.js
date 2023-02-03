@@ -4,7 +4,7 @@ const express = require('express')
 const {
     getOneResturant,
     getAllResturant,
-  
+    updateResturant,
   } = require('../controllers/resturant');
 
 const router = express.Router()
@@ -13,5 +13,6 @@ const router = express.Router()
 
 router.get('/:id', getOneResturant)
 router.get('/', getAllResturant)
+router.put('/edit/:id', updateResturant)
 
 module.exports=router
