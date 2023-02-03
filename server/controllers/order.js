@@ -13,6 +13,10 @@ const orderPlaced = async (req, res) => {
       resturant: { phone, resturantName, resturantId },
     } = req.body;
 
+    if(!items){
+      res.status(400).json({message: "items are required"})
+    }
+
     const order = new orderData({
       items,
       status,
@@ -52,6 +56,7 @@ const getAllOrder = async (req, res) => {
 const getOneOrder = async (req, res) => {
   try {
     const order = await orderData.findById(req.params.id);
+    res.status(200).json(order);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

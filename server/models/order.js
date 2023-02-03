@@ -21,6 +21,12 @@ const orderSchema = new Schema(
         "Out For Delivery",
       ],
     },
+    addInfo: {
+      type: String,
+      required: true,
+      default: "",
+    },
+    
     user: {
       email: {
         type: String,

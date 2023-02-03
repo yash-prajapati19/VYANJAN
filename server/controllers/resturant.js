@@ -2,9 +2,9 @@ const resturantData = require("../models/resturant");
 
 // get all resturantData
 
-const getAllResturant = (req, res) => {
+const getAllResturant = async (req, res) => {
   try {
-    const resturant = resturantData.find();
+    const resturant = await resturantData.find();
     res.status(200).json(resturant);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -13,9 +13,9 @@ const getAllResturant = (req, res) => {
 
 // get one resturantData
 
-const getOneResturant = (req, res) => {
+const getOneResturant = async (req, res) => {
   try {
-    const resturant = resturantData.findById(req.params.id);
+    const resturant = await resturantData.findById(req.params.id);
     res.status(200).json(resturant);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -24,9 +24,9 @@ const getOneResturant = (req, res) => {
 
 // update resturantData
 
-const updateResturant = (req, res) => {
+const updateResturant = async (req, res) => {
   try {
-    const resturant = resturantData.findByIdAndUpdate(req.params.id, {
+    const resturant = await resturantData.findByIdAndUpdate(req.params.id, {
       $set: req.body,
     });
     res.status(200).json(resturant);

@@ -33,7 +33,7 @@ const resturantSchema = new Schema(
       required: true,
     },
     admin_id: { type: Schema.Types.ObjectId, required: true, default:"", ref: "AdminData" },
-    items: [{ type: Schema.Types.ObjectId, ref: "Item" }],
+    items: [{ type: Schema.Types.ObjectId, default:"", ref: "Item" }],
   },
   { timestamps: true }
 );
