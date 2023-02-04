@@ -1,11 +1,7 @@
 .backgroundImg {
     background-image: url(../../../images/Dialogue.png);
-    height: 100vh;
+    height: 660px;
     margin-top: -16px;
-}
-
-body{
-    max-height: 100vh;
 }
 
 .fymText {
@@ -48,7 +44,7 @@ body{
 }
 
 .matchCard>div {
-    /* margin-top: 25px; */
+    margin-top: 25px;
     margin: 35px auto 0px auto;
 }
 
