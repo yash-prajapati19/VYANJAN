@@ -7,6 +7,7 @@ const {
     getAllUserOrder,
     getOneOrder,
     updateOrder,
+    addInfo,
     cancelOrder,
   } = require("../controllers/order");
   
@@ -18,7 +19,8 @@ const {
 router.route('/place').post(orderPlaced)
 router.route('/:id').get(getOneOrder)
 router.route('/:id').put(updateOrder)
-router.route('/:id').put(cancelOrder)
+router.route('/addinfo/:id').put(addInfo)
+router.route('/cancel/:id').put(cancelOrder)
 router.route('/resturant/:id').get(getAllResturantOrder)
 router.route('/user/:id').get(getAllUserOrder)
 

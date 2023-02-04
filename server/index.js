@@ -28,7 +28,7 @@ app.use(
 
 app.use("/admin", adminRoute);
 app.use("/user", require("./routes/user"), userRoute);
-app.use("/resturant", require("./routes/resturant"), resturantRoute);
+app.use("/resturant", require("./routes/resturant"),verifyToken, resturantRoute);
 app.use("/order", require("./routes/order"), verifyToken, orderRoute);
 app.use("/item", require("./routes/item"), verifyToken, itemRoute);
 

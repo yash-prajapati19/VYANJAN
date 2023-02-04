@@ -13,6 +13,10 @@ const orderPlaced = async (req, res) => {
       resturant: { phone, resturantName, resturantId },
     } = req.body;
 
+    if (!items) {
+      res.status(400).json({ message: "items are required" });
+    }
+
     const order = new orderData({
       items,
       status,
@@ -52,6 +56,7 @@ const getAllOrder = async (req, res) => {
 const getOneOrder = async (req, res) => {
   try {
     const order = await orderData.findById(req.params.id);
+    res.status(200).json(order);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -69,6 +74,19 @@ const updateOrder = async (req, res) => {
     res.status(200).json(updatedOrder);
   } catch (err) {
     res.status(500).json({ message: err.message });
+  }
+};
+
+const addInfo = async (req, res) => {
+  try {
+    const { addInfo } = req.body;
+    const updatedOrder = await orderData.findByIdAndUpdate(
+      req.params.id,
+      { addInfo },
+      { new: true }
+    );
+  } catch (err) {
+    res.status(500).json({ message: err.message }); 
   }
 };
 
@@ -112,11 +130,12 @@ const getAllResturantOrder = async (req, res) => {
 };
 
 module.exports = {
-    orderPlaced,
-    getAllOrder,
-    getOneOrder,
-    updateOrder,
-    cancelOrder,
-    getAllUserOrder,
-    getAllResturantOrder,
-}
+  orderPlaced,
+  getAllOrder,
+  getOneOrder,
+  updateOrder,
+  addInfo,
+  cancelOrder,
+  getAllUserOrder,
+  getAllResturantOrder,
+};
