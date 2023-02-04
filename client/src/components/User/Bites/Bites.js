@@ -24,7 +24,6 @@ const Bites = ({ url }) => {
         <div>
           <Status />
         </div>
-        <h3>Bites</h3>
         <div className="video-container">
           {data.map((list, i) => (
             <Video key={i} url={list.url} />

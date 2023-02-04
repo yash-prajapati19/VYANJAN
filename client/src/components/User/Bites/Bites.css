@@ -1,9 +1,10 @@
-html{
+html {
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
 }
-.bites{
-    background-image: url(../../../images/foodSvg.jpg) ;
+
+.bites {
+    background-image: url(../../../images/foodSvg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,50 +12,41 @@ html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
-}
-.bites>h3{
-    color:white;
-}
-.bites>div:first-child{
-    color:white;
-    margin-left:80%;
-}
-.status{
-    display: flex;
-}
-.status>p{
-    font-size: 1.15rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.video-container{
-    /* position:relative; */
-    height: 80vh;
-    width: 70vw;
-    width:270px;
-    border-radius: 20px;
-    background-color: white;
-    overflow: scroll;
-    scroll-snap-type: y mandatory;
-    scrollbar-width: none;
-    margin-top:-1vmax;
-}
-.video-container::-webkit-scrollbar{
-    display: none;
+    height: 100vh;
+    width: 100vw;
 }
 
-@media  screen and (max-width:600px) {
-    .bites{
-        height: 100vh;
-    }
-    .video-container{
-        width:70vw;
-        height: 85vh;
-        margin-top: -10vmax;
-    }
-        .bites>div>.status {
-            margin-left: -120%;
-            margin-top: -15%;
-        }
+.status {
+    color: white;
+    display: flex;
+    position: absolute;
+    right: 50%;
+    text-align: center;
+    font-size: larger;
+    z-index: 10000;
+    padding: 15px 10px 15px 10px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    background: yellow;
+    color: black;
+}
+
+.status>p {
+    font-size: 1.15rem;
+    margin-top: 2px;
+    margin-left: 1vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.video-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: scroll;
+    background-image: url(../../../images/foodSvg.jpg);
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+
+.video-container::-webkit-scrollbar {
+    display: none;
 }

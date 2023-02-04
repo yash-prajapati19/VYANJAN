@@ -1,0 +1,9 @@
+export const All_ITEM_REQUEST = "All_ITEM_REQUEST";
+export const All_ITEM_SUCCESS = "All_ITEM_SUCCESS";
+export const All_ITEM_FAIL = "All_ITEM_FAIL";
+
+export const ITEM_DETAILS_REQUEST = "ITEM_DETAILS_REQUEST";
+export const ITEM_DETAILS_SUCCESS = "ITEM_DETAILS_SUCCESS";
+export const ITEM_DETAILS_FAIL = "ITEM_DETAILS_FAIL";
+
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
