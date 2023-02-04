@@ -4,7 +4,7 @@ body{
 .suggestion{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; 
     padding: 20px;
 }
 .suggestionHeading {
@@ -23,6 +23,7 @@ body{
     width: 88vw;
     flex-wrap: wrap;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .suggestCard {
@@ -74,4 +75,21 @@ body{
     box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
 
     transform: translateY(-1vmax);
+}
+
+@media screen and (max-width:600px) {
+    .container{
+        justify-content: center;
+    }
+  .suggestCard{
+    width:70%;
+    flex-direction: column;
+    margin: -1vmax auto;
+    height:50vh;
+    margin-bottom: 20vmax;
+  }    
+  .suggestCard>img{
+    width: 100%;
+    height: 50%;
+  }
 }

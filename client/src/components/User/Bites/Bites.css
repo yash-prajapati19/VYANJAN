@@ -3,38 +3,53 @@ html{
     overflow-x: hidden;
 }
 .bites{
-    background-image: url(../../../images/foodSvg.jpg);
-    /* display: grid;
-    place-items: center; */
+    background-image: url(../../../images/foodSvg.jpg) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    background-color: rgb(0, 0, 0);
-    color:black;
 }
-
-.status{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+.bites>h3{
     color:white;
 }
-
+.bites>div:first-child{
+    color:white;
+    margin-left:80%;
+}
+.status{
+    display: flex;
+}
+.status>p{
+    font-size: 1.15rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .video-container{
     /* position:relative; */
     height: 80vh;
     width: 70vw;
-    max-width:270px;
+    width:270px;
     border-radius: 20px;
     background-color: white;
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
-    margin-top:0;
+    margin-top:-1vmax;
 }
 .video-container::-webkit-scrollbar{
     display: none;
+}
+
+@media  screen and (max-width:600px) {
+    .video-container{
+        width:70vw;
+        height: 55vh;
+    }
+        .bites>div>.status {
+            margin-right: 10%;
+        }
 }

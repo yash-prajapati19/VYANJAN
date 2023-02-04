@@ -13,7 +13,7 @@ const RestaurantSuggestion = () => {
        price:"₹399"
     },
     {
-       name:"Restaurant 2",
+       name:"Restaurant 2", 
        image:Restaurant2,
        address:"Address 2",
        price:"₹599"
