@@ -1,0 +1,32 @@
+.categories{
+    color: aliceblue;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-left: 40px;
+    margin-top: 60px;
+}
+.food{
+    display: flex;
+    color: aliceblue;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+}
+
+.food > figure >img{
+    width: 60px;
+    margin-left: 55px;
+    border: 0px solid #7cfc00;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #353535;
+}
+
+.food > figure > img:hover{
+    background-color: antiquewhite;
+}
+
+figcaption {
+    padding-top: 10px;
+    padding-left: 55px;
+}

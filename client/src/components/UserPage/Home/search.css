@@ -1,0 +1,22 @@
+.search{
+    display: flex;
+    width: 900px;
+    transform: translate(324px,-188px);
+}
+.search > input{
+    width: 750px;
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 9px 12px;
+    border: none;
+    transition: 5s linear;
+}
+.search > button{
+    color: black;
+    transform: translateX(-0.5px);
+    padding: 6px 20px;
+    background-color: #e0d027;
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}

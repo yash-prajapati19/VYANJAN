@@ -1,0 +1,47 @@
+.restaurants{
+    color: aliceblue;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-left: 40px;
+    margin-top: 0px !important;
+}
+.restauCat{
+    display: flex;
+}
+.rCard{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    width: 255px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 40px;
+}
+
+.rCard:hover{
+    box-shadow: 5px 8px 20px #ffffff4d;
+}
+
+.rCard > img{
+    width: 100%;
+}
+
+.rCard > p{
+    margin-left: 6px;
+    margin-top: 4.5px !important;
+    margin-bottom: 0px !important;
+}
+
+.rCard > p:nth-of-type(1){
+    font-size: 24px;
+}
+
+.rCard > button{
+    background-color: #7cfc00;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 22px;
+    margin-top: 9px;
+    border: none;
+    padding: 5px 2px;
+}

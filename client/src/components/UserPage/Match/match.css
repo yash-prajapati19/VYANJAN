@@ -1,0 +1,65 @@
+.backgroundImg{
+    background-image: url(../../../images/Dialogue.png);
+    height: 660px;
+    margin-top: -16px;
+}
+.fymText{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 75px;
+    font-weight: 600;
+    color: aliceblue;
+    font-family: 'Allura', cursive;
+    animation-name: dhikchik ;
+    animation-duration: 200ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dhikchik{
+    0% {color: aliceblue;}
+  40% {color: #7cfc00;} 
+  80% {color: aliceblue;}   
+}
+
+.matchCard{
+    background-color: #151515;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0px;
+    border-radius: 70px;
+    margin: auto;
+    position: relative;
+    top: 43%;
+    transform: translateY(-50%);
+}
+.matchCard > div{
+    margin-top: 25px;
+    margin: 35px auto 0px auto;
+}
+
+.matchImages > img{
+    width: 130px;
+    border-radius: 50%;
+}
+
+.matchImages > img:nth-of-type(1){
+    margin-right: 80px;
+}
+
+.fymButton{
+    font-size: 25px;
+    padding: 4px 18px;
+    border: none;
+    background-color: #7cfc00;
+    color: black;
+    font-family: 'Ubuntu', 'sans-serif';
+}
+.fymButton:hover{
+    background-color: hotpink;
+    cursor: pointer;
+}
+
+.confetti-canvas{
+    position: absolute;
+}
