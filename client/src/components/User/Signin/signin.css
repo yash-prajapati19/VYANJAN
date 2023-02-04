@@ -1,0 +1,81 @@
+.signIn{
+    background-color: #151515;
+    height: 720px;
+}
+
+.logo{
+    margin-left: 20px;
+    top: 10px;
+    width: 175px !important;
+}
+
+.signInWithG > img{
+    width: 33px;
+    position: relative;
+    top: 5px;
+    margin-left: 4px;
+    margin-top: 2px;
+    background-color: transparent;
+}
+
+.signInWithG{
+    border-radius: 35px;
+    color: #fbc204;
+    display: flex;
+    background: black;
+    border: none;
+    font-family: 'Kanit', sans-serif;
+    font-size: 33px;
+    padding: 7px 37px;
+    letter-spacing: 0.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 200px;
+    border: 2px white solid;
+    cursor: pointer;
+}
+
+.signInWithG:hover{
+    background-color: black;
+    color: white;
+    border: 2px #1e75d1 solid;
+}
+
+.signIn > img{
+    position: absolute;
+    bottom: 0px;
+    width: 325px;
+    background: transparent;
+}
+
+#star1{
+    left: 352px;
+    bottom: -35px;
+}
+
+#star2{
+    left: 201px;
+}
+
+#star3{
+    bottom: -90px;
+    left: 800px;
+}
+
+#star4{
+    left: -3px;
+    bottom: -15px;
+}
+
+#star5{
+    left: 575px;
+}
+
+#star6{
+    right: 0px;
+}
+
+#star7{
+    right: 217px;
+}
