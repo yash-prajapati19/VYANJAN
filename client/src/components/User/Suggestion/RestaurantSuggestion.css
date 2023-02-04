@@ -1,12 +1,14 @@
-body{
+body {
     background-color: black;
 }
-.suggestion{
+
+.suggestion {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; 
+    justify-content: space-between;
     padding: 20px;
 }
+
 .suggestionHeading {
     text-align: center;
     font-family: "Roboto";
@@ -17,6 +19,7 @@ body{
     color: white;
     padding: 15px;
 }
+
 .container {
     display: flex;
     margin: 1vmax auto;
@@ -36,10 +39,12 @@ body{
     margin: 2vmax;
     transition: all 0.5s;
 }
+
 .suggestCard>img {
     height: 16vmax;
     width: 27vmax;
 }
+
 .suggestCard>.details {
     margin-left: 0.5vmax;
     display: flex;
@@ -52,13 +57,16 @@ body{
     font-size: 1.8vmax;
 
 }
-.details>p:first-child{
+
+.details>p:first-child {
     margin-top: 0.25vmax;
 }
-.details > div{
+
+.details>div {
     margin-top: -1.5vmax;
 }
-.details>p:last-child{
+
+.details>p:last-child {
     font-size: 1.5vmax;
     font-family: "Roboto";
 }
@@ -78,18 +86,52 @@ body{
 }
 
 @media screen and (max-width:600px) {
-    .container{
+    .container {
         justify-content: center;
     }
-  .suggestCard{
-    width:70%;
-    flex-direction: column;
-    margin: -1vmax auto;
-    height:50vh;
-    margin-bottom: 20vmax;
-  }    
-  .suggestCard>img{
-    width: 100%;
-    height: 50%;
-  }
+
+    .suggestionHeading {
+        font-size: 3vmax;
+        width: 70%;
+    }
+
+    .suggestCard {
+        width: 70%;
+        flex-direction: column;
+        margin: 1vmax auto;
+        height: 50vh;
+        margin-bottom: 10vmax;
+    }
+
+    .suggestCard>img {
+        width: 100%;
+        height: 50%;
+    }
+
+    .suggestCard>.details {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .details>p {
+        font-size: 3vmax;
+    }
+
+    .details>p:first-child {
+        margin-top: 0vmax;
+    }
+
+    .details>div {
+        margin-top: -4vmax;
+    }
+
+    .details>p:last-child {
+        font-size: 2.5vmax;
+    }
+
+    .suggestCard>.details>span {
+        font-size: 2.5vmax;
+        margin-top: 1.5vmax;
+    }
 }

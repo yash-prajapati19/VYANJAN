@@ -15,7 +15,6 @@ function App() {
   const [otpVerificationMail, setOtpVerificationMail] = useState('')
   const [tempLogin, setTempLogin] = useState({email:'', pw:''})
 
-
   return (
   <Fragment>
     <Routes>
