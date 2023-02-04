@@ -1,0 +1,49 @@
+html {
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+}
+
+.bites {
+    background-image: url(../../../images/foodSvg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.status {
+    color: white;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    font-size: larger;
+    z-index: 10000;
+    width: 100%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.status>p {
+    font-size: 1.15rem;
+    margin-top: 2px;
+    margin-left: 1vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.video-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: scroll;
+    background-image: url(../../../images/foodSvg.jpg);
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+
+.video-container::-webkit-scrollbar {
+    display: none;
+}
