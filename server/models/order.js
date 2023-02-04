@@ -23,7 +23,7 @@ const orderSchema = new Schema(
     },
     addInfo: {
       type: String,
-      required: true,
+      required: false,
       default: "",
     },
     

@@ -13,8 +13,8 @@ const orderPlaced = async (req, res) => {
       resturant: { phone, resturantName, resturantId },
     } = req.body;
 
-    if(!items){
-      res.status(400).json({message: "items are required"})
+    if (!items) {
+      res.status(400).json({ message: "items are required" });
     }
 
     const order = new orderData({
@@ -77,6 +77,19 @@ const updateOrder = async (req, res) => {
   }
 };
 
+const addInfo = async (req, res) => {
+  try {
+    const { addInfo } = req.body;
+    const updatedOrder = await orderData.findByIdAndUpdate(
+      req.params.id,
+      { addInfo },
+      { new: true }
+    );
+  } catch (err) {
+    res.status(500).json({ message: err.message }); 
+  }
+};
+
 // cancel order
 
 const cancelOrder = async (req, res) => {
@@ -117,11 +130,12 @@ const getAllResturantOrder = async (req, res) => {
 };
 
 module.exports = {
-    orderPlaced,
-    getAllOrder,
-    getOneOrder,
-    updateOrder,
-    cancelOrder,
-    getAllUserOrder,
-    getAllResturantOrder,
-}
+  orderPlaced,
+  getAllOrder,
+  getOneOrder,
+  updateOrder,
+  addInfo,
+  cancelOrder,
+  getAllUserOrder,
+  getAllResturantOrder,
+};
