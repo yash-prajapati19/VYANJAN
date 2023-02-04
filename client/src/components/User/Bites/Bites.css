@@ -45,11 +45,16 @@ html{
 }
 
 @media  screen and (max-width:600px) {
+    .bites{
+        height: 100vh;
+    }
     .video-container{
         width:70vw;
-        height: 55vh;
+        height: 85vh;
+        margin-top: -10vmax;
     }
         .bites>div>.status {
-            margin-right: 10%;
+            margin-left: -120%;
+            margin-top: -15%;
         }
 }

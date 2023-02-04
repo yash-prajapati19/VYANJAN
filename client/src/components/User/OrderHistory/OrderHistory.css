@@ -18,7 +18,7 @@ body{
 .orderBox {
     background-color: rgba(115, 115, 115, 0.26);
     border:1px solid greenyellow;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-left: 5vmax;
     margin-top: 5vmax;
     width: 25vmax;
@@ -85,4 +85,31 @@ body{
     cursor: pointer;
     transition: all 0.5s;
     width: 18vmax; 
+}
+@media screen and (max-width:600px) {
+  .orderBox{
+    width:57vmax;
+  }    
+  .orderBox>.orderId>p {
+      font-size: 3vmax;
+  }
+  .orderBox>.orderFrom>p {
+      font-size: 3vmax;
+  }
+.orderBox>.orderCall>p {
+    font-size: 3vmax;
+}
+  .orderBox>.orderAddress>p {
+      font-size: 3vmax;
+  }
+
+  .orderBox>.cancel>p {
+      font-size: 3vmax;
+  }
+  .cancel>button {
+      margin-top: 1vmax;
+      margin-left: 3vmax;
+      margin-bottom: 1vmax;
+      width: 47vmax;
+  }
 }
