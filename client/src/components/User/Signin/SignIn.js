@@ -10,7 +10,15 @@ import S5 from '../../../images/yash.png';
 import S6 from '../../../images/allu.png';
 import S7 from '../../../images/shra.png';
 
-const SignIn = () => {
+function SignIn() {
+
+  const googleAuth = () => {
+    window.open(
+      `${process.env.REACT_APP_API_URL}/auth/google/callback`,
+      "_self"
+    );
+  };
+  
     useEffect(() => {   
         return () => {
           document.body.style.overflow = "hidden";
@@ -20,7 +28,7 @@ const SignIn = () => {
         <Fragment>
         <div className="signIn">
             <img src={Logo} alt="" className="logo" />
-            <button className="signInWithG">SIGN IN WITH <img src={M1} alt="" /></button>
+            <button className="signInWithG" onClick={googleAuth}>SIGN IN WITH <img src={M1} alt="" /></button>
             <img src={S1} alt="" srcSet="" id="star1"/>
             <img src={S2} alt="" srcSet="" id="star2"/>
             <img src={S3} alt="" srcSet="" id="star3"/>
