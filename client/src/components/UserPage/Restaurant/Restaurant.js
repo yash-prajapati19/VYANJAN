@@ -7,7 +7,6 @@ import Items from "./Items";
 const Restaurant = () => {
     return(
         <Fragment>
-        <style>@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Patrick+Hand+SC&family=Permanent+Marker&display=swap');</style>
         <div className="main" style={{backgroundColor: "#151515"}}>
             <Navbar />
             <RestauInfo />

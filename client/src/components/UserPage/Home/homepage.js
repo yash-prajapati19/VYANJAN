@@ -1,4 +1,4 @@
-import { React, Fragment } from "react";
+import { React, Fragment, useEffect } from "react";
 import Navbar from "./navbar";
 import Slider from "./slider";
 import Patti from "./patti";
@@ -8,6 +8,11 @@ import Category from "./category";
 import Footer from "./footer";
 
 const Homepage = () => {
+    useEffect(() => {   
+        return () => {
+          document.body.style.overflowX = "hidden";
+        }
+      }, [])
     return(
         <Fragment>
         <div className="main" style={{backgroundColor: "#151515"}}>

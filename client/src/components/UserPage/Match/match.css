@@ -63,3 +63,25 @@
 .confetti-canvas{
     position: absolute;
 }
+
+.panvel{
+    display: flex;
+    margin: 20px auto 20px auto;
+}
+
+.panvel > img{
+    width: 130px;
+}
+
+.panvelDia{
+    padding-top: 35px;
+}
+
+.panvelDia > p{
+    margin-top: 2px;
+    font-size: 32px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    font-family: 'Permanent Marker', cursive;
+    color: whitesmoke;
+}

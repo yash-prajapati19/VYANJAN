@@ -5,7 +5,10 @@ import Cat2 from '../../../images/pizza.png';
 import Cat3 from '../../../images/punjabi.png'
 import Cat4 from '../../../images/snacks.png'
 import Cat5 from '../../../images/south.png'
-import Cat6 from '../../../images/ice-cream.png'
+import Cat6 from '../../../images/gujarati.png'
+import Cat7 from '../../../images/chiken.png'
+import Cat8 from '../../../images/thandai.png'
+import Cat9 from '../../../images/ice-cream.png'
 const Category = () => {
     return(
         <Fragment>
@@ -34,6 +37,18 @@ const Category = () => {
             </figure>
             <figure>
                 <img src={Cat6} alt="" />
+                <figcaption>GUJARATI</figcaption>
+            </figure>
+            <figure>
+                <img src={Cat7} alt="" />
+                <figcaption>CHICKEN</figcaption>
+            </figure>
+            <figure>
+                <img src={Cat8} alt="" />
+                <figcaption>THANDAI</figcaption>
+            </figure>
+            <figure>
+                <img src={Cat9} alt="" />
                 <figcaption>ICE-CREAM</figcaption>
             </figure>
             </div>
