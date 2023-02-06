@@ -14,15 +14,15 @@ const CurrentOrderStatus = ({ orderDetails }) => {
 
 
   return (
-    <div className="flex items-center px-7 justify-center min-h-screen bg-tintedGreen/95">
+    <div className="flex items-center px-7 justify-center min-h-screen bg-superBlack">
       <div className="relative">
-        <div className='w-full text-yellow-400 bg-superBlack flex flex-col justify-center py-16 px-12 lg:text-lg h-full rounded-r-2xl md:block' >
+        <div className='w-full text-black-300 bg-white flex flex-col justify-center py-16 px-12 lg:text-lg h-full rounded-r-2xl md:block' >
           <div
             className='text-3xl font-medium text-center mb-2'>
             Final Bill
-          </div>
+          </div><hr className='h-px my-3 bg-gray-200 border-0 dark:bg-gray-700'></hr>
           <div
-            className='text-2xl font-medium text-center mt-4'>
+            className='text-2xl font-medium text-center mt-2 mb-4'>
             User Details
           </div>
           <div
@@ -56,15 +56,15 @@ const CurrentOrderStatus = ({ orderDetails }) => {
             </div>
           </div>
           <div
-            className='absolute bg-yellow-400 text-superBlack hover:text-yellow-400 group cursor-pointer px-3 rounded-lg overflow-hidden py-2 right-1 bottom-1' onClick={playShorts}>
+            className='absolute bg-tintedGreen/95 text-superBlack hover:text-gray-400 group cursor-pointer px-3 rounded-lg overflow-hidden py-2 right-1 bottom-1' style={{width:"90%",marginRight:"14px", marginBottom:"12px"}} onClick={playShorts}>
             <span className='absolute group-hover:w-full bg-superBlack transition-all ease-out duration-300 w-0 h-full left-0 top-0'></span>
-            <div className='relative text-lg font-medium'>Play Bits</div>
+            <div className='relative  text-lg font-medium' style={{textAlign:"center"}}>Play Bits</div>
           </div>
         </div>
       </div>
       <div
         className='absolute top-0'>
-        <div className='text-center bg-superBlack text-yellow-400 px-2 pb-3 pt-2'>
+        <div className='text-center bg-superBlack text-tintedGreen/95 px-2 pb-3 pt-2'>
           <span className='font-medium text-xl'>Status</span>
           : {orderDetails.status}
         </div>

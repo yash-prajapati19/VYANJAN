@@ -77,41 +77,41 @@ const CurrentOrderDetails = () => {
         <Route path={`:userId`} element={<CurrentOrderStatus orderDetails={checkoutInfo} />} />
         <Route path='/' element={
           <div>
-        <div className="flex items-center justify-center min-h-screen bg-tintedGreen/95">
-          <div className="relative text-yellow-400 bg-superBlack flex flex-col m-6 lg:w-9/12 w-10/12  shadow-2xl rounded-2xl md:flex-row">
-            <div className="flex flex-col w-full md:w-1/2 text-center justify-center lg:py-16 py-5 lg:px-12 px-4">
+        <div className="flex items-center justify-center h-50 bg-black">
+          <div className="relative text-green-400 bg-superBlack w-100% flex flex-col m-5  md:flex-row" style={{width:"90%"}}>
+            <div className="flex flex-col w-full md:w-2/3 text-center justify-center lg:py-16 py-5 lg:px-12 px-4">
               <span className="mb-3 lg:text-5xl text-3xl font-medium">
                 Ready for checkout?
               </span>
               <span className='font-light text-base text-white mb-8'>
                 Welcome! Please enter your details
               </span>
-              <div>
-                <input type="number" onChange={(e) => { setDynamicData(prevState => ({ ...prevState, number: e.target.value })); setCheckoutInfo(prevState => ({ ...prevState, number: e.target.value })) }} placeholder='Contact Number' name="number" id="number" required autoComplete='off' className='w-full py-1 px-2 border border-gray-300 bg-white/20 text-white placeholder:font-light placeholder:text-white lg:text-xl' />
+              <div className='border-b border-teal-500'>
+                <input type="number" onChange={(e) => { setDynamicData(prevState => ({ ...prevState, number: e.target.value })); setCheckoutInfo(prevState => ({ ...prevState, number: e.target.value })) }} placeholder='Contact Number' name="number" id="number" required autoComplete='off' className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none ' />
               </div>
-              <div className="pt-4">
-                <input type="text" defaultValue={demoBillData.user.email} onChange={e => { setDynamicData(prevState => ({ ...prevState, email: e.target.value })); setCheckoutInfo(prevState => ({ ...prevState, email: e.target.value })) }} name="email" id="email" required autoComplete='off' placeholder='Email' className='w-full py-1 px-2 border border-gray-300 bg-white/20 text-white placeholder:font-light placeholder:text-white lg:text-xl' />
+              <div className="pt-4 mb-5px border-b border-teal-500" style={{marginTop:"25px"}}>
+                <input type="text" defaultValue={demoBillData.user.email} onChange={e => { setDynamicData(prevState => ({ ...prevState, email: e.target.value })); setCheckoutInfo(prevState => ({ ...prevState, email: e.target.value })) }} name="email" id="email" required autoComplete='off' placeholder='Email' className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none ' />
               </div>
               <div
-                className='mt-5 grid grid-cols-2 gap-y-5 gap-x-4'>
-                <input defaultValue={dynamicData.address.floorApartment} onChange={(e) => { setCheckoutInfo(prevState => ({ ...prevState, address: { ...prevState.address, floorApartment: e.target.value } })); setDynamicData(prevState => ({ ...prevState, address: { ...prevState.address, floorApartment: e.target.value } })); }} required type="text" name="floor/apartment" id="floor/apartment" placeholder='Floor/Apartment' className='w-full py-1 px-2 border bg-white/20 text-white border-gray-300 placeholder:font-light placeholder:text-white lg:text-xl' />
-                <input defaultValue={dynamicData.address.locality} onChange={(e) => { setCheckoutInfo(prevState => ({ ...prevState, address: { ...prevState.address, locality: e.target.value } })); setDynamicData(prevState => ({ ...prevState, address: { ...prevState.address, locality: e.target.value } })) }} required type="text" name="locality" id="locality" placeholder='Locality' className='w-full py-1 px-2 border  bg-white/20 text-white border-gray-300 placeholder:font-light placeholder:text-white lg:text-xl' />
-                <input defaultValue={dynamicData.address.street} onChange={(e) => { setCheckoutInfo(prevState => ({ ...prevState, address: { ...prevState.address, street: e.target.value } })); setDynamicData(prevState => ({ ...prevState, address: { ...prevState.address, street: e.target.value } })) }} required type="text" name="street" id="street" placeholder='Street' className='w-full  bg-white/20 text-white py-1 px-2 border border-gray-300 placeholder:font-light placeholder:text-white lg:text-xl' />
-                <input defaultValue={dynamicData.address.zipcode} onChange={(e) => { setCheckoutInfo(prevState => ({ ...prevState, address: { ...prevState.address, zipcode: Number(e.target.value) } })); setDynamicData(prevState => ({ ...prevState, address: { ...prevState.address, zipcode: Number(e.target.value) } })) }} required type="number" name="zipcode" id="zipcode" placeholder='Zipcode' className='w-full py-1 px-2 border border-gray-300 bg-white/20 text-white placeholder:font-light placeholder:text-white lg:text-xl' />
+                className='mt-5 grid grid-cols-2 gap-y-5 border-b border-teal-500 gap-x-4' style={{marginTop:"25px"}}>
+                <input defaultValue={dynamicData.address.floorApartment} onChange={(e) => { setCheckoutInfo(prevState => ({ ...prevState, address: { ...prevState.address, floorApartment: e.target.value } })); setDynamicData(prevState => ({ ...prevState, address: { ...prevState.address, floorApartment: e.target.value } })); }} required type="text" name="floor/apartment" id="floor/apartment" placeholder='Floor/Apartment' className='appearance-none bg-transparent border-none w-full text-gray-700  border-b border-teal-500 mr-3 py-1 px-2 leading-tight focus:outline-none ' />
+                <input defaultValue={dynamicData.address.locality} onChange={(e) => { setCheckoutInfo(prevState => ({ ...prevState, address: { ...prevState.address, locality: e.target.value } })); setDynamicData(prevState => ({ ...prevState, address: { ...prevState.address, locality: e.target.value } })) }} required type="text" name="locality" id="locality" placeholder='Locality' className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none ' />
+                <input defaultValue={dynamicData.address.street} onChange={(e) => { setCheckoutInfo(prevState => ({ ...prevState, address: { ...prevState.address, street: e.target.value } })); setDynamicData(prevState => ({ ...prevState, address: { ...prevState.address, street: e.target.value } })) }} required type="text" name="street" id="street" placeholder='Street' className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none ' />
+                <input defaultValue={dynamicData.address.zipcode} onChange={(e) => { setCheckoutInfo(prevState => ({ ...prevState, address: { ...prevState.address, zipcode: Number(e.target.value) } })); setDynamicData(prevState => ({ ...prevState, address: { ...prevState.address, zipcode: Number(e.target.value) } })) }} required type="number" name="zipcode" id="zipcode" placeholder='Zipcode' className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none ' />
               </div>
-              <div className='py-4'>
-                <textarea name="text" onChange={e => { setDynamicData(prevState => ({ ...prevState, addYourOwnTwist: e.target.value })); setCheckoutInfo(prevState => ({ ...prevState, addYourOwnTwist: e.target.value })) }} placeholder='Add your own twist ( More spicy, sweet, less sugar, maggi masala, etc... )' id="addYourOwnTwist" className='w-full resize-none bg-white/20 text-white py-1 px-2 border border-gray-300 placeholder:font-light placeholder:text-white lg:text-xl' />
+              <div className='py-4 border-b border-teal-500 ' style={{marginTop:"25px"}}>
+                <textarea name="text" onChange={e => { setDynamicData(prevState => ({ ...prevState, addYourOwnTwist: e.target.value })); setCheckoutInfo(prevState => ({ ...prevState, addYourOwnTwist: e.target.value })) }} placeholder='Add your own twist ( More spicy, sweet, less sugar, maggi masala, etc... )' id="addYourOwnTwist" className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none' />
               </div>
-              <div>
-                <textarea name="text" onChange={e => { setDynamicData(prevState => ({ ...prevState, adviceForDeliveryBoy: e.target.value })); setCheckoutInfo(prevState => ({ ...prevState, adviceForDeliveryBoy: e.target.value })) }} placeholder='Instruction for deliveryboy ( Bell ring matt karna, Padosi ko de jaana, Guard ko de jaana, etc... )' id="adviceForDeliveryBoy" className='w-full resize-none py-1 px-2 border border-gray-300 bg-white/20 text-white placeholder:font-light placeholder:text-white lg:text-xl' />
+              <div className='border-b border-teal-500' style={{marginTop:"25px"}}>
+                <textarea name="text" onChange={e => { setDynamicData(prevState => ({ ...prevState, adviceForDeliveryBoy: e.target.value })); setCheckoutInfo(prevState => ({ ...prevState, adviceForDeliveryBoy: e.target.value })) }} placeholder='Instruction for deliveryboy ( Bell ring matt karna, Padosi ko de jaana, Guard ko de jaana, etc... )' id="adviceForDeliveryBoy" className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none' />
               </div>
             </div>
-            <div className="relative md:w-1/2">
+            <div className="relative bg-white  text-black rounded-xl md:w-1/2">
               <div className='w-full flex flex-col justify-center lg:py-16 py-5 lg:px-12 px-4 text-lg h-full rounded-r-2xl md:block' >
                 <div
                   className='text-3xl font-medium text-center mb-2'>
                   Order Details
-                </div>
+                </div><hr className='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700'></hr>
                 <div
                   className='text-2xl font-medium text-center mt-4'>
                   User Details
@@ -156,7 +156,7 @@ const CurrentOrderDetails = () => {
                     <div><span className='font-medium'>Restaurant Name:</span> {demoBillData.restaurant.name}</div>
                   </div>
                 </div>
-                <button onClick={e => checkoutOrder(e)} className='w-full cursor-pointer bg-yellow-400/90 text-black p-2 my-6 font-semibold'>
+                <button onClick={e => checkoutOrder(e)} className='w-full cursor-pointer bg-tintedGreen/95 text-black p-2 my-6 font-semibold'>
                   Checkout
                 </button>
               </div>
