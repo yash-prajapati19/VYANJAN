@@ -1,0 +1,66 @@
+.restauInfo {
+    display: flex;
+}
+
+.restaurantAbout {
+    padding-top: 50px;
+    width: 35%;
+}
+
+.restaurantAbout>p {
+    color: aliceblue;
+    max-width: 40%;
+    position: absolute;
+    z-index: 2;
+    margin-top: 0px !important;
+    margin-left: 50px;
+}
+
+.restaurantAbout>p:nth-of-type(1) {
+    max-width: 45% !important;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 48px;
+}
+
+.restaurantAbout>p:nth-of-type(2) {
+    font-size: 29px;
+    font-family: 'Patrick Hand SC', cursive;
+    letter-spacing: 0.5px;
+    transform: translateY(85px);
+}
+
+.restaurantAbout>p:nth-of-type(3) {
+    font-size: 20px;
+    transform: translateY(245px);
+}
+
+.restaurantImage {
+    float: right;
+    width: 65%;
+    height: 390px;
+    overflow: hidden;
+}
+
+.restaurantImage>img {
+    transform: translateY(-125px);
+    width: 100%;
+    object-fit: cover;
+}
+
+.Restauparda {
+    height: 391px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 79px;
+    background: linear-gradient(93deg, #151515 35%, rgba(255, 255, 255, 0) 100%);
+}
+
+.rating {
+    display: flex;
+}
+
+.rating>i {
+    margin-right: 8px;
+    color: #ffd700;
+}

@@ -1,0 +1,93 @@
+.menu {
+    display: flex;
+}
+
+.ItemCard {
+    margin-left: 50px;
+    margin-bottom: 30px;
+    display: flex;
+    direction: ltr;
+}
+
+.items {
+    margin-left: 35px;
+    height: 600px;
+    overflow-x: auto;
+    direction: rtl;
+}
+
+.items::-webkit-scrollbar {
+    width: 4px;
+    transition: all 5s ease-in;
+}
+
+.itemTitle {
+    color: aliceblue;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-left: 40px;
+}
+
+.ItemCard>img {
+    height: 100px;
+    width: 150px;
+    border-radius: 20px 0px 0px 20px;
+    object-fit: fill;
+}
+
+.ItemDescription>p {
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-size: 20px;
+    margin-right: 120px;
+    color: aliceblue;
+    margin-left: 15px;
+}
+
+.addItemToCart {
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 5px 30px;
+    background-color: #7cfc00;
+    font-size: 22px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.addItemToCart:hover {
+    background-color: hotpink;
+}
+
+.superItems {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-left: 80px;
+}
+
+.superItems>button {
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.superItems>button:hover {
+    color: #7cfc00;
+}
+
+.veg {
+    color: #4bc72c;
+}
+
+.nonveg {
+    color: #dc1919;
+}

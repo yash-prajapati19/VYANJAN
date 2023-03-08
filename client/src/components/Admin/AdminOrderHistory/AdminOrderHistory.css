@@ -1,0 +1,9 @@
+.adminOrderTitle{
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 1.8vmax;
+    border-bottom: 1px solid white;
+    width: 35%;
+    margin: 0vmax auto;
+    color: white;
+}

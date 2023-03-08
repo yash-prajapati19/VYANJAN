@@ -1,0 +1,54 @@
+/* width */
+::-webkit-scrollbar {
+    transition: all 5s ease-in;
+    width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+    background: black; 
+    transition: all 5s linear;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: #7cfc00; 
+    transition: all 5s ease-in;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: rgb(70, 68, 68); 
+    }
+
+.navbar{
+    display: flex;
+    background-color: #151515;
+}
+.logo > img{
+    height: 65px;
+    padding: 8px 20px 3px 20px;
+}
+
+.navB{
+    font-size: 23px;
+    background-color: transparent;
+    border: none;
+    color: #7cfc00;
+    margin-right: 22px;
+    font-family: 'Ubuntu', sans-serif;
+    transform: translateY(24px);
+    letter-spacing: 1px;
+}
+
+.loginButton{
+    margin-left: 910px;
+}
+
+.cartButton{
+    padding: 5px 8px;
+    color: black !important;
+    background-color: #7cfc00 !important;
+    transform: translateY(21px);
+    border-radius: 12px;
+}

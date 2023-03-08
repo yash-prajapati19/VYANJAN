@@ -1,0 +1,20 @@
+.patti{
+    display: flex;
+    height: 65px;
+    background-color: transparent;
+}
+
+.patti > div{
+    margin-left: 50px;
+}
+
+.feature{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    color: #7cfc00;
+    font-size: 27.5px;
+    padding-top: 15px;
+}
+.feature > span{
+    margin-left: 12px;
+}
