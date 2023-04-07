@@ -37,8 +37,8 @@ const createItem = async (req, res) => {
 
 const getAllResturantItem = async (req, res) => {
   try {
-    const item = await itemData.find({ creator: req.params.id });
-    res.status(200).json(item);
+    const items = await itemData.find({ creator: req.params.id });
+    res.status(200).json(items);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

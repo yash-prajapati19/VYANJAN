@@ -11,6 +11,7 @@ import AdminOrderHistory from "./components/Admin/AdminOrderHistory/AdminOrderHi
 import Homepage from "./components/User/Home/homepage";
 import SignIn from "./components/User/Signin/SignIn";
 import Restaurant from "./components/User/Restaurant/Restaurant";
+import AdminRestaurant from "./components/Admin/Restaurant/Restaurant";
 import Match from "./components/User/Match/Match";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/restaurant" element={<Restaurant />} />
+        <Route path="/admin/restaurant" element={<AdminRestaurant />} />
         <Route path="/match" element={<Match />} />
       </Routes>
     </Fragment>

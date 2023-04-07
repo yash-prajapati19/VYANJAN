@@ -4,7 +4,7 @@ const resturantData = require("../models/resturant");
 
 const getAllResturant = async (req, res) => {
   try {
-    const resturant = await resturantData.find();
+    const resturants = await resturantData.find();
     res.status(200).json(resturant);
   } catch (err) {
     res.status(500).json({ message: err.message });

@@ -19,7 +19,6 @@ body {
     color: white;
     padding: 15px;
 }
-
 .container {
     display: flex;
     margin: 1vmax auto;
@@ -39,12 +38,10 @@ body {
     margin: 2vmax;
     transition: all 0.5s;
 }
-
 .suggestCard>img {
     height: 16vmax;
     width: 27vmax;
 }
-
 .suggestCard>.details {
     margin-left: 0.5vmax;
     display: flex;
